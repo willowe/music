@@ -1,6 +1,7 @@
-#!`/usr/bin/which perl`
+#!/usr/bin/perl
 
 use strict;
+use warnings;
 
 # a favorite guitar exercise:  try to find every instance of a note on the instrument
 #
@@ -19,7 +20,15 @@ our @notes = ( [ 'A' ],
 	       [ 'G' ],
 	       [ 'G#', 'Ab' ] );
 
+our @strings = ( 'e', 'a', 'd', 'g', 'b', 'e\'' );
+
+my $string = int(rand(scalar(@strings)));
+
+print "Start at the ", int(rand(1)) == 0 ? "top" : "bottom", " of the ", $strings[$string], " string and go ", int(rand(1)) == 0 ? "up" : "down", ".\n\n";
+
 srand();
+
+print "Find notes in this order:\n\n";
 
 while ( scalar( @notes ) > 0 ) {
 
